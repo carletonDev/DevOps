@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class ProductCategoriesService {
 
-    protected basePath = 'https://localhost:44358';
+    protected basePath = 'https://adventureworkscarl.azurewebsites.net';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
