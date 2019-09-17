@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Configuration } from '../configuration';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 import { AddressesService } from '../api/addresses.service';
@@ -19,14 +19,26 @@ import { ProductsService } from '../api/products.service';
 import { SalesOrderDetailsService } from '../api/salesOrderDetails.service';
 import { SalesOrderHeadersService } from '../api/salesOrderHeaders.service';
 import { ValuesService } from '../api/values.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerListComponent } from '../components/customer-list/customer-list.component';
+import { DatatableComponent } from '../components/datatable/datatable.component';
+import { DataTablesModule } from 'angular-datatables';
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CustomerListComponent,
+    DatatableComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    DataTablesModule,
+    Ng2TableModule
   ],
   providers: [
     AddressesService,
@@ -42,6 +54,7 @@ import { ValuesService } from '../api/values.service';
     SalesOrderHeadersService,
     ValuesService
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
