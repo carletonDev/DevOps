@@ -17,7 +17,8 @@ super();
 //create async function to get customer data 
 async GetCustomers(){
 super.data=await this.customerService.getCustomer().toPromise();
-console.log(super.data)
+super.name="CustomerList";
+console.log(super.data);
 }
 //on initalization run async function
   ngOnInit() {

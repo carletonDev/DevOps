@@ -25,6 +25,7 @@ import { DatatableComponent } from '../components/datatable/datatable.component'
 import { DataTablesModule } from 'angular-datatables';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 
+
 @NgModule({
   declarations: [
     AppComponent,

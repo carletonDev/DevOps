@@ -13,7 +13,7 @@ export class DatatableComponent implements OnInit {
   data:any=[];
   columns:any=[];
   title:string
-
+  name:string
   
 CreateColumns(data){
   var keys= Object.keys(data[0]);
