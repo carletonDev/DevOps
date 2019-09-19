@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, ViewChild,AfterViewInit, Output, Input} from '@angular/core';
 
 
 
@@ -7,7 +7,17 @@ import { Component, OnInit} from '@angular/core';
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.css']
 })
-export class DatatableComponent {
- name:string
- rows =[];
+//in order for an abstract component to recieve data it either needs to bind to the selector using input or 
+// an event emitter output like on click
+export class DatatableComponent{
+ @Input() rows=[];
+  @Input() settings={}; // just in case you want to use ng2 smart table upt to you
+  @Input() name:string;
+  @Input() columns=[]
+  loadingIndicator = true;
+  reorderable = true;
+ 
+  constructor(){
+  }
+
 }

@@ -6,9 +6,13 @@ import { DatatableComponent } from '../datatable/datatable.component';
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent  implements OnInit{
+export class CustomerListComponent extends DatatableComponent  implements OnInit{
 //construct class call extends component set name of data table to userlist
+name:string="UserList"
 rows=[];
+col=[];
+//can use settings variable for ng2 smart table to work just need to uncomment inputs
+
 settings = {
   columns: {
     customerId: {
@@ -64,12 +68,26 @@ settings = {
     }
   }
 };
-constructor(private customerService :CustomersService){ this.name="UserList";}
-
+constructor(private customerService :CustomersService){super()}
 //onitilization set data 
-async GetRows(){
- this.customerService.getCustomer().subscribe(response => this.rows = response)
- }
+ GetRows(){
+ this.customerService.getCustomer().subscribe(response => {
+this.rows = response;
+this.GetCol(this.rows)
 
-ngOnInit(){this.GetRows();}
+})
+ }
+ //method that sets up the columns to display in the array properly formatted can be changed to remove 
+ //user id by just slicing at the begininng instead of using id as a prop ngx data table
+GetCol(data){
+  var keys = Object.keys(data[0]);
+  this.col.push({prop:keys[0]},)
+  var slice = keys.slice(1);
+  slice.forEach(element=>{
+    this.col.push({name:element})
+  })
+}
+//on initalization subscribe to http GET service
+ngOnInit(){this.GetRows();
+}
 }

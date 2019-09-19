@@ -22,7 +22,7 @@ import { ValuesService } from '../api/values.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerListComponent } from '../components/customer-list/customer-list.component';
 import { DatatableComponent } from '../components/datatable/datatable.component';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    NgxDatatableModule
   ],
   providers: [
     AddressesService,
