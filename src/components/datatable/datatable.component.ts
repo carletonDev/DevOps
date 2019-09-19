@@ -1,5 +1,4 @@
-import { Component, ViewChild,AfterViewInit, Output, Input} from '@angular/core';
-
+import { Component, Input} from '@angular/core';
 
 
 @Component({

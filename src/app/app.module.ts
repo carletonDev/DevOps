@@ -24,6 +24,7 @@ import { CustomerListComponent } from '../components/customer-list/customer-list
 import { DatatableComponent } from '../components/datatable/datatable.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { DataTablesModule } from 'angular-datatables';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     BrowserAnimationsModule,
     HttpClientModule,
     Ng2SmartTableModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    DataTablesModule
   ],
   providers: [
     AddressesService,
