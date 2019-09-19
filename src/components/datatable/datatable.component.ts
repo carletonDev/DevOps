@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-import { Subject } from 'rxjs';
 
 
 
@@ -9,10 +8,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./datatable.component.css']
 })
 export class DatatableComponent {
- 
   rows=[];
   columns =[];
-  public name:string;
-
- 
+  name:string; 
 }
