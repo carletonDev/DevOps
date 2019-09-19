@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Subject } from 'rxjs';
 
 
 
@@ -7,30 +8,11 @@ import { Component, OnInit} from '@angular/core';
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.css']
 })
-export class DatatableComponent implements OnInit {
+export class DatatableComponent {
  
-  dtOptions:DataTables.Settings={};
-  data:any=[];
-  columns:any=[];
-  title:string
-  name:string
-  
-CreateColumns(data){
-  var keys= Object.keys(data[0]);
-  for(var x=0;x<keys.length;x++){
-    this.columns.push({title:keys[x],data:keys[x]})
-  }
-  console.log(this.columns);
-  console.log(this.data);
-}
+  rows=[];
+  columns =[];
+  public name:string;
 
-  ngOnInit(): void {
-  this.CreateColumns(this.data)
-  this.dtOptions={
-  data:this.data,
-  columns:this.columns
-}
-  }
-
-  
+ 
 }
