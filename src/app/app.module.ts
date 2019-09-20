@@ -27,6 +27,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {OktaAuthModule,OktaCallbackComponent} from '@okta/okta-angular';
+import { LoginComponent } from '../components/login/login.component';
 
 const config = {
   issuer: 'https://dev-430760.okta.com/oauth2/default',
@@ -38,7 +39,8 @@ const config = {
   declarations: [
     AppComponent,
     CustomerListComponent,
-    DatatableComponent
+    DatatableComponent,
+    LoginComponent
 
   ],
   imports: [

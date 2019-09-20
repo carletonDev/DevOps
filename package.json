@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~8.2.4",
     "@angular/router": "~8.2.4",
     "@okta/okta-angular": "^1.2.2",
+    "@okta/okta-signin-widget": "^3.2.1",
     "@swimlane/ngx-datatable": "^16.0.2",
     "angular-datatables": "^8.0.0",
     "angular-oauth2-oidc": "^8.0.4",

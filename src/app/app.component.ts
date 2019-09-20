@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   login() {
-    this.oktaAuth.loginRedirect('/profile');
+    this.oktaAuth.loginRedirect('/customers');
   }
 
   logout() {
