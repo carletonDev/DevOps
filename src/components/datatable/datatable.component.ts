@@ -13,6 +13,7 @@ export class DatatableComponent{
   @Input() settings={}; // just in case you want to use ng2 smart table upt to you
   @Input() name:string;
   @Input() columns=[]
+  @Input() dtOptions={};
   loadingIndicator = true;
   reorderable = true;
  

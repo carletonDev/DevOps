@@ -79,7 +79,6 @@ this.dtOptions={
   ajax:this.rows,
   columns:this.col
 }
-console.log(this.dtOptions)
 })
  }
  //method that sets up the columns to display in the array properly formatted can be changed to remove 

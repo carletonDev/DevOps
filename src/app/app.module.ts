@@ -25,6 +25,15 @@ import { DatatableComponent } from '../components/datatable/datatable.component'
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTablesModule } from 'angular-datatables';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import {OktaAuthModule,OktaCallbackComponent} from '@okta/okta-angular';
+
+const config = {
+  issuer: 'https://dev-430760.okta.com/oauth2/default',
+  redirectUri: 'http://localhost:4200/implicit/callback',
+  clientId: '0oa1e3b2v6LlO1yCN357',
+  pkce: true
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +48,9 @@ import { DataTablesModule } from 'angular-datatables';
     HttpClientModule,
     Ng2SmartTableModule,
     NgxDatatableModule,
-    DataTablesModule
+    DataTablesModule,
+    FlexLayoutModule,
+    OktaAuthModule.initAuth(config)
   ],
   providers: [
     AddressesService,
