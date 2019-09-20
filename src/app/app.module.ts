@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Optional, SkipSelf, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Configuration } from '../configuration';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
 import { AddressesService } from '../api/addresses.service';
 import { CustomerAddressesService } from '../api/customerAddresses.service';
 import { CustomersService } from '../api/customers.service';

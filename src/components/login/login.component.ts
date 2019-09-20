@@ -8,12 +8,12 @@ import * as OktaSignIn from '@okta/okta-signin-widget';
 
 @Component({
   selector: 'login',
-  template: './login.component.html'
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
   signIn;
   widget = new OktaSignIn({
-    baseUrl: 'https://dev-430760.okta.com',
+    baseUrl: 'https://dev-430760.okta.com/',
     authParams: {
       pkce: true
     }
