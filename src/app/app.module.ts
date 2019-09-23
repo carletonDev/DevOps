@@ -25,7 +25,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {OktaAuthModule,OktaCallbackComponent} from '@okta/okta-angular';
 import { LoginComponent } from '../components/login/login.component';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const config = {
   issuer: 'https://dev-430760.okta.com/oauth2/default',
   redirectUri: 'http://localhost:4200/implicit/callback',
@@ -49,7 +49,8 @@ const config = {
     NgxDatatableModule,
     DataTablesModule,
     FlexLayoutModule,
-    OktaAuthModule.initAuth(config)
+    OktaAuthModule.initAuth(config),
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     AddressesService,
