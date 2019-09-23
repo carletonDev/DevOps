@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {CustomersService} from '../../api/customers.service';
 import { DatatableComponent } from '../datatable/datatable.component';
+import { OktaAuthService } from '@okta/okta-angular';
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -12,6 +13,7 @@ name:string="UserList"
 rows=[];
 col=[];
 dtOptions={};
+headers:string[];
 //can use settings variable for ng2 smart table to work just need to uncomment inputs
 
 settings = {
@@ -69,9 +71,10 @@ settings = {
     }
   }
 };
-constructor(private customerService :CustomersService){super()}
+constructor(private customerService :CustomersService, private oktaAuth:OktaAuthService){super()}
 //onitilization set data 
  GetRows(){
+this.customerService.defaultHeaders.append('Authorization','Bearer'+this.GetToken())
  this.customerService.getCustomer().subscribe(response => {
 this.rows = response;
 this.GetCol(this.rows)
@@ -80,6 +83,10 @@ this.dtOptions={
   columns:this.col
 }
 })
+ }
+ async GetToken(){
+   const accessToken = await this.oktaAuth.getAccessToken();
+  return accessToken
  }
  //method that sets up the columns to display in the array properly formatted can be changed to remove 
  //user id by just slicing at the begininng instead of using id as a prop ngx data table

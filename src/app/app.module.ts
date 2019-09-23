@@ -23,13 +23,14 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {OKTA_CONFIG,OktaAuthModule} from '@okta/okta-angular';
+import {OktaAuthModule} from '@okta/okta-angular';
 import { LoginComponent } from '../components/login/login.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HomeComponent } from '../components/home/home.component';
 const config = {
   issuer: 'https://dev-430760.okta.com/oauth2/default',
-  clientId: '0oa1e3b2v6LlO1yCN357',
   redirectUri: 'http://localhost:4200/implicit/callback',
+  clientId: '0oa1e3b2v6LlO1yCN357',
   pkce: true
 }
 @NgModule({
@@ -37,8 +38,8 @@ const config = {
     AppComponent,
     CustomerListComponent,
     DatatableComponent,
-    LoginComponent
-
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,7 @@ const config = {
     NgxDatatableModule,
     DataTablesModule,
     FlexLayoutModule,
-    OktaAuthModule,
+    OktaAuthModule.initAuth(config),
     MDBBootstrapModule.forRoot()
   ],
   providers: [
@@ -64,8 +65,7 @@ const config = {
     ProductsService,
     SalesOrderDetailsService,
     SalesOrderHeadersService,
-    ValuesService,
-    {provide: OKTA_CONFIG, useValue: config }
+    ValuesService
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
