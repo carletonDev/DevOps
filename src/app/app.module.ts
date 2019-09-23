@@ -23,13 +23,13 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTablesModule } from 'angular-datatables';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {OktaAuthModule,OktaCallbackComponent} from '@okta/okta-angular';
+import {OKTA_CONFIG,OktaAuthModule} from '@okta/okta-angular';
 import { LoginComponent } from '../components/login/login.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const config = {
   issuer: 'https://dev-430760.okta.com/oauth2/default',
-  redirectUri: 'http://localhost:4200/implicit/callback',
   clientId: '0oa1e3b2v6LlO1yCN357',
+  redirectUri: 'http://localhost:4200/implicit/callback',
   pkce: true
 }
 @NgModule({
@@ -49,7 +49,7 @@ const config = {
     NgxDatatableModule,
     DataTablesModule,
     FlexLayoutModule,
-    OktaAuthModule.initAuth(config),
+    OktaAuthModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [
@@ -64,7 +64,8 @@ const config = {
     ProductsService,
     SalesOrderDetailsService,
     SalesOrderHeadersService,
-    ValuesService
+    ValuesService,
+    {provide: OKTA_CONFIG, useValue: config }
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
