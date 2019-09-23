@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
       pkce: true
     }
   });
-
+//testing commits
   constructor(oktaAuth: OktaAuthService, router: Router) {
     this.signIn = oktaAuth;
 
