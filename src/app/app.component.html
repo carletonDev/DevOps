@@ -6,7 +6,7 @@
         </a>
     </mdb-navbar-brand>
     <div>
-    <button class="btn btn-outline-success" *ngIf="!isAuthenticated" routerLink="login()"> Login </button>
+    <button class="btn btn-outline-success" *ngIf="!isAuthenticated" routerLink="/login"> Login </button>
     <button class="btn btn-outline-success"  *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
     </div>
 </mdb-navbar>
