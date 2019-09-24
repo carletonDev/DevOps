@@ -27,6 +27,7 @@ import {OktaAuthModule} from '@okta/okta-angular';
 import { LoginComponent } from '../components/login/login.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from '../components/home/home.component';
+import { ProductListComponent } from 'src/components/product-list/product-list.component';
 const config = {
   issuer: 'https://dev-430760.okta.com/oauth2/default',
   redirectUri: 'http://localhost:4200/implicit/callback',
@@ -39,7 +40,8 @@ const config = {
     CustomerListComponent,
     DatatableComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
