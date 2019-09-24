@@ -4,13 +4,15 @@ import { CustomerListComponent } from 'src/components/customer-list/customer-lis
 import { OktaCallbackComponent } from '@okta/okta-angular';
 import { LoginComponent } from 'src/components/login/login.component';
 import { HomeComponent } from 'src/components/home/home.component';
+import { ProductListComponent } from 'src/components/product-list/product-list.component';
 
 
 const routes: Routes = [
   {path:"customers", component:CustomerListComponent},
   {path:"login",component:LoginComponent},
   {path: 'implicit/callback',component: OktaCallbackComponent},
-  {path:'' ,component: HomeComponent}
+  {path:'' ,component: HomeComponent},
+  {path:'product',component:ProductListComponent}
 ];
 //useful if u had data in another page that was protected 
 //example:
