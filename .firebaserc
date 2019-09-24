@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "devopsfire": {
+      "hosting": {
+        "advworks": [
+          "devopsfire"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "devopsfire"
+  }
+}
