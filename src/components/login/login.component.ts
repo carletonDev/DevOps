@@ -13,9 +13,15 @@ import * as OktaSignIn from '@okta/okta-signin-widget';
 export class LoginComponent implements OnInit {
   signIn;
   widget = new OktaSignIn({
+    logo:'https://imgdump.blob.core.windows.net/img/AdventureWorks.png',
     baseUrl: 'https://dev-430760.okta.com/',
     authParams: {
       pkce: true
+    },
+    features:{
+      registration:true,
+      rememberMe:true,
+      smsRecovery:true
     }
   });
 //testing commits
